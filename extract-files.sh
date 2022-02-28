@@ -76,6 +76,9 @@ function blob_fixup() {
         vendor/etc/gps.conf)
             sed -i 's/com\.lbe\.security\.miui/com\.google\.android\.carrierlocation/g' "${2}"
             ;;
+        vendor/etc/qcril_database/upgrade/config/6.0_config.sql)
+            sed -i '/persist.vendor.radio.redir_party_num/ s/true/false/g' "${2}"
+            ;;
         vendor/etc/seccomp_policy/qwesd@2.0.policy)
             echo "pipe2: 1" >> "${2}"
             ;;
