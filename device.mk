@@ -309,7 +309,8 @@ PRODUCT_PACKAGES += \
     FuxiWifiRes \
     FuxiWifiResTarget \
     FuxiWifiResTarget_spf \
-    FuxiSecureElement
+    FuxiSecureElement \
+    MiuiCameraOverlay
 
 # Parts
 PRODUCT_PACKAGES += \
