@@ -1,4 +1,4 @@
-# Unpinned blobs from fuxi_global-user 13 TKQ1.221114.001 V14.0.6.0.UMCMIXM release-keys
+# Unpinned blobs from fuxi_global-user 13 TKQ1.221114.001 V816.0.1.0.UMCMIXM release-keys
 
 # ACDB
 odm/etc/acdbdata/Tutu/Tutu_acdb_cal.acdb
@@ -208,12 +208,14 @@ vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2udk7vendor.so
 vendor/lib64/libcapiv2uvvendor.so
 vendor/lib64/libdlbpreg.so
+vendor/lib64/libfcsam.so
 vendor/lib64/libfmpal.so
 vendor/lib64/libhfp_pal.so
 vendor/lib64/libkaraokepal.so
 vendor/lib64/liblx-ar_util.so
 vendor/lib64/liblx-osal.so
 vendor/lib64/libmcs.so
+vendor/lib64/libmisfpsop.so
 vendor/lib64/libmisight.so
 vendor/lib64/libmisoundsa.so
 vendor/lib64/libmispowerop.so
@@ -298,7 +300,7 @@ vendor/etc/init/hw/init.batterysecret.rc
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-qti
-vendor/etc/init/android.hardware.bluetooth@1.1-service-qti-debug.rc:vendor/etc/init/android.hardware.bluetooth@1.1-service-qti.rc
+vendor/etc/init/android.hardware.bluetooth@1.1-service-qti.rc
 vendor/etc/vintf/manifest/bluetooth_audio.xml
 vendor/etc/vintf/manifest/bttpi-saidl.xml
 vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so
@@ -501,8 +503,11 @@ odm/etc/camera/resources/render/glsl/binShaders32/shader_GLPROGRAM_FACIALREFINE_
 odm/etc/camera/resources/render/glsl/binShaders32/shader_GLPROGRAM_FACIALREFINE_NORMAL_WARP_Define_USE_EG_PRESERV.bin
 odm/etc/camera/resources/render/glsl/binShaders32/shader_GLPROGRAM_FACIALREFINE_NORMAL_WARP_Define_USE_EG_PRESERV_DEF_CATMULL_ROM.bin
 odm/etc/camera/resources/render/glsl/binShaders32/shader_GLPROGRAM_FACIALREFINE_V2_BASE_FUSE_OFFSET.bin
+odm/etc/camera/resources/render/glsl/binShaders32/shader_GLPROGRAM_FACIALREFINE_V2_BASE_FUSE_OFFSET_Define_NEED_REFINE.bin
 odm/etc/camera/resources/render/glsl/binShaders32/shader_GLPROGRAM_FACIALREFINE_V2_BASE_FUSE_OFFSET_Define_USE_SPLIT.bin
+odm/etc/camera/resources/render/glsl/binShaders32/shader_GLPROGRAM_FACIALREFINE_V2_BASE_FUSE_OFFSET_Define_USE_SPLIT_NEED_REFINE.bin
 odm/etc/camera/resources/render/glsl/binShaders32/shader_GLPROGRAM_FACIALREFINE_V2_EYE_FUSE_OFFSET.bin
+odm/etc/camera/resources/render/glsl/binShaders32/shader_GLPROGRAM_FACIALREFINE_V2_EYE_FUSE_OFFSET_Define_NEED_REFINE.bin
 odm/etc/camera/resources/render/glsl/binShaders32/shader_GLPROGRAM_FACIALREFINE_V2_WARP.bin
 odm/etc/camera/resources/render/glsl/binShaders32/shader_GLPROGRAM_FACIALREFINE_V2_WARP_Define_DEF_CATMULL_ROM.bin
 odm/etc/camera/resources/render/glsl/binShaders32/shader_GLPROGRAM_FACIALREFINE_V2_WARP_Define_DEF_M.bin
@@ -580,8 +585,11 @@ odm/etc/camera/resources/render/glsl/binShaders64/shader_GLPROGRAM_FACIALREFINE_
 odm/etc/camera/resources/render/glsl/binShaders64/shader_GLPROGRAM_FACIALREFINE_NORMAL_WARP_Define_USE_EG_PRESERV.bin
 odm/etc/camera/resources/render/glsl/binShaders64/shader_GLPROGRAM_FACIALREFINE_NORMAL_WARP_Define_USE_EG_PRESERV_DEF_CATMULL_ROM.bin
 odm/etc/camera/resources/render/glsl/binShaders64/shader_GLPROGRAM_FACIALREFINE_V2_BASE_FUSE_OFFSET.bin
+odm/etc/camera/resources/render/glsl/binShaders64/shader_GLPROGRAM_FACIALREFINE_V2_BASE_FUSE_OFFSET_Define_NEED_REFINE.bin
 odm/etc/camera/resources/render/glsl/binShaders64/shader_GLPROGRAM_FACIALREFINE_V2_BASE_FUSE_OFFSET_Define_USE_SPLIT.bin
+odm/etc/camera/resources/render/glsl/binShaders64/shader_GLPROGRAM_FACIALREFINE_V2_BASE_FUSE_OFFSET_Define_USE_SPLIT_NEED_REFINE.bin
 odm/etc/camera/resources/render/glsl/binShaders64/shader_GLPROGRAM_FACIALREFINE_V2_EYE_FUSE_OFFSET.bin
+odm/etc/camera/resources/render/glsl/binShaders64/shader_GLPROGRAM_FACIALREFINE_V2_EYE_FUSE_OFFSET_Define_NEED_REFINE.bin
 odm/etc/camera/resources/render/glsl/binShaders64/shader_GLPROGRAM_FACIALREFINE_V2_WARP.bin
 odm/etc/camera/resources/render/glsl/binShaders64/shader_GLPROGRAM_FACIALREFINE_V2_WARP_Define_DEF_CATMULL_ROM.bin
 odm/etc/camera/resources/render/glsl/binShaders64/shader_GLPROGRAM_FACIALREFINE_V2_WARP_Define_DEF_M.bin
@@ -1058,6 +1066,7 @@ odm/lib64/libceres.so
 odm/lib64/libchifeature2.so
 odm/lib64/libchilog.so
 odm/lib64/libcom.qti.chinodeutils.so
+odm/lib64/libcom.xiaomi.algomsg.so
 odm/lib64/libcom.xiaomi.attribute.so
 odm/lib64/libcom.xiaomi.debug.so
 odm/lib64/libcom.xiaomi.eventcallback.so
@@ -1185,6 +1194,7 @@ vendor/lib64/hw/android.hardware.camera.provider@2.7-impl-vcamera.so
 vendor/lib64/hw/vendor.xiaomi.hardware.quickcamera@1.0-impl.so
 vendor/lib64/libPlatformValidatorShared.so
 vendor/lib64/libSNPE.so
+vendor/lib64/libSNPESample.so
 vendor/lib64/libSnpeDspV65Stub.so
 vendor/lib64/libSnpeDspV66Stub.so
 vendor/lib64/libSnpeHta.so
@@ -1199,6 +1209,7 @@ vendor/lib64/libcalculator_htp.so
 vendor/lib64/libcamxexternalformatutils.so
 vendor/lib64/libhta_hexagon_runtime_snpe.so
 vendor/lib64/libmemunreachable.so
+vendor/lib64/libmiam.so
 vendor/lib64/libmicuttlefish_fs.so
 vendor/lib64/libmivsock_utils.so
 vendor/lib64/libos.so
@@ -1494,6 +1505,7 @@ odm/lib64/libfpsmonitor.so
 odm/lib64/libhdrmode.so
 odm/lib64/libhistprocess.so
 odm/lib64/libmiBrightness.so
+odm/lib64/libmiClstc.so
 odm/lib64/libmiSensorCtrl.so
 odm/lib64/libmiXmlParser.so
 odm/lib64/libmi_dspp.so
@@ -1512,6 +1524,7 @@ vendor/lib64/libdisplayfeature.so
 vendor/lib64/libdisplayfeatureservice.so
 vendor/lib64/libeyecare.so
 vendor/lib64/libmi-stc-HW-modulate.so
+vendor/lib64/libmilut.so
 vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so
 
 # Display (HDR)
@@ -1521,7 +1534,6 @@ vendor/lib64/libhdr_tm.so
 vendor/lib64/libhdrdynamic.so
 vendor/lib64/libhdrdynamicootf.so
 vendor/lib64/libhdrvivid.so
-vendor/lib64/libpichdralgo.so
 
 # Display (HWC)
 vendor/bin/hw/vendor.qti.hardware.display.composer-service
@@ -1569,6 +1581,9 @@ vendor/etc/display/DPU7__.xml
 vendor/etc/display/DPU820.xml
 vendor/etc/display/DPU8__.xml
 vendor/etc/display/DPU9__.xml
+vendor/etc/display/LUT0.txt
+vendor/etc/display/LUT1.txt
+vendor/etc/display/LUT2.txt
 vendor/etc/display/advanced_sf_offsets.xml
 vendor/etc/display/thermallevel_to_fps.xml
 vendor/etc/clstc_config_library.xml
@@ -1768,6 +1783,11 @@ odm/firmware/a740_zap.elf
 odm/firmware/a740_zap.mbn
 odm/firmware/a740_zap.mdt
 vendor/firmware/a740_sqe.fw
+vendor/firmware/a740_zap.b00
+vendor/firmware/a740_zap.b01
+vendor/firmware/a740_zap.b02
+vendor/firmware/a740_zap.elf
+vendor/firmware/a740_zap.mdt
 vendor/firmware/gmu_gen70200.bin
 
 # Hotword Enrollment
@@ -1825,6 +1845,8 @@ vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so
 
 # Media
+odm/etc/media_profiles_kalama.xml:vendor/etc/media_profiles_kalama.xml
+odm/etc/media_profiles_kalama.xml
 vendor/bin/hw/qconfigservice
 vendor/bin/hw/vendor.qti.media.c2@1.0-service
 vendor/bin/hw/vendor.qti.media.c2audio@1.0-service
@@ -1847,11 +1869,11 @@ vendor/etc/media_codecs.xml
 vendor/etc/media_codecs_c2_audio.xml
 vendor/etc/media_codecs_kalama.xml
 vendor/etc/media_codecs_kalama_vendor.xml
+vendor/etc/media_codecs_kalama_vendor_without_dvenc.xml
 vendor/etc/media_codecs_performance_kalama.xml
 vendor/etc/media_codecs_performance_kalama_vendor.xml
 vendor/etc/media_profiles.xml
 vendor/etc/media_profiles_V1_0.xml
-vendor/etc/media_profiles_kalama.xml
 vendor/lib64/libCOSNet_spatial_qnn_quantized.so
 vendor/lib64/libEvrcSwCodec.so
 vendor/lib64/libOmxCore.so
@@ -1877,6 +1899,7 @@ vendor/lib64/libqcodec2_filterbase.so
 vendor/lib64/libqcodec2_hooks.so
 vendor/lib64/libqcodec2_imgtxrfilter.so
 vendor/lib64/libqcodec2_mockfilter.so
+vendor/lib64/libqcodec2_mocklutfilter.so
 vendor/lib64/libqcodec2_mockqc2filter.so
 vendor/lib64/libqcodec2_platform.so
 vendor/lib64/libqcodec2_salmapfilter.so
@@ -1898,21 +1921,19 @@ vendor/etc/dolby/dax-default.xml
 vendor/etc/init/dolbycodec2.rc
 vendor/etc/init/vendor.dolby.media.c2@1.0-service.rc
 vendor/etc/media_codecs_dolby_audio.xml
-vendor/etc/media_codecs_no_dolbyencoder_vendor.xml
-vendor/lib64/c2.dolby.avc.dec.so
-vendor/lib64/c2.dolby.avc.sec.dec.so
 vendor/lib64/c2.dolby.client.so
-vendor/lib64/c2.dolby.egl.so
 vendor/lib64/c2.dolby.hevc.dec.so
 vendor/lib64/c2.dolby.hevc.enc.so
 vendor/lib64/c2.dolby.hevc.sec.dec.so
 vendor/lib64/c2.dolby.store.so
+vendor/lib64/libDecoderProcessor.so
+vendor/lib64/libEncoderProcessor.so
 vendor/lib64/libcodec2_soft_ac4dec.so
 vendor/lib64/libcodec2_soft_ddpdec.so
 vendor/lib64/libcodec2_store_dolby.so
 vendor/lib64/libdeccfg.so
 vendor/lib64/libdolbyottcameracontrol.so
-vendor/lib64/libdolbyvision.so
+vendor/lib64/libeglcore.so
 
 # Memtrack
 vendor/bin/hw/vendor.qti.hardware.memtrack-service
@@ -2016,6 +2037,7 @@ vendor/etc/sn100u_nfcon.pnscr
 vendor/etc/sn100u_pnx_chr.pnscr
 vendor/etc/sn100u_pnx_cui.pnscr
 vendor/etc/sn100u_pnx_ese_3.pnscr
+vendor/etc/sn100u_pnx_ese_3_hce.pnscr
 vendor/etc/sn100u_pnx_ese_aclog.pnscr
 vendor/etc/sn100u_pnx_ese_cplc.pnscr
 vendor/etc/sn100u_pnx_ese_fabkey.pnscr
@@ -2215,6 +2237,7 @@ vendor/etc/qcril_database/upgrade/config/10.0_config.sql
 vendor/etc/qcril_database/upgrade/config/11.0_config.sql
 vendor/etc/qcril_database/upgrade/config/12.0_config.sql
 vendor/etc/qcril_database/upgrade/config/13.0_config.sql
+vendor/etc/qcril_database/upgrade/config/14.0_config.sql
 vendor/etc/qcril_database/upgrade/config/6.0_config.sql
 vendor/etc/qcril_database/upgrade/config/7.0_config.sql
 vendor/etc/qcril_database/upgrade/config/8.0_config.sql
