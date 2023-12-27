@@ -2618,6 +2618,8 @@ odm/etc/thermal-tgame.conf:vendor/etc/thermal-tgame.conf
 odm/etc/thermal-video.conf:vendor/etc/thermal-video.conf
 odm/etc/thermal-videochat.conf:vendor/etc/thermal-videochat.conf
 vendor/etc/thermal-engine.conf
+vendor/etc/thermal-map.conf
+vendor/etc/thermald-devices.conf
 
 # Time Services
 vendor/app/TimeService/TimeService.apk
