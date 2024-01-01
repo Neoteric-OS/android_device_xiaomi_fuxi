@@ -130,6 +130,9 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
+# Power
+TARGET_POWER_FEATURE_EXT_LIB := //$(DEVICE_PATH):libpowerfeature_ext_fuxi
+
 # PowerShare
 TARGET_POWERSHARE_NODE := /sys/class/qcom-battery/reverse_chg_mode
 
