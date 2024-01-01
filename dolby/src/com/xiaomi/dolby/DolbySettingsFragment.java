@@ -203,8 +203,8 @@ public class DolbySettingsFragment extends PreferenceFragment implements
         final boolean enable = mDsOn && !mIsProfileUnknown;
         mPresetPref.setEnabled(enable);
         mDialoguePref.setEnabled(enable);
-        mVolumePref.setEnabled(enable);
         mVirtualizerPref.setEnabled(enable && !mIsOnSpeaker);
+        mVolumePref.setEnabled(enable);
         mBassPref.setEnabled(enable && !mIsOnSpeaker);
 
         if (!enable) return;
