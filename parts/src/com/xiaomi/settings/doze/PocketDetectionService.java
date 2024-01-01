@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Paranoid Android
+ * Copyright (C) 2022-2024 Paranoid Android
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -37,12 +37,21 @@ public class PocketDetectionService extends Service {
 
     @Override
     public void onCreate() {
+        // Ensure to call the superclass method
+        super.onCreate();
         if (DEBUG) Log.i(TAG, "Creating service");
+        initializeManagers();
+        registerScreenStateReceiver();
+    }
+
+    private void initializeManagers() {
         mPowerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
         mKeyguardManager = (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mTouchSensor = mSensorManager.getDefaultSensor(TYPE_LARGE_AREA_TOUCH_SENSOR);
+    }
 
+    private void registerScreenStateReceiver() {
         IntentFilter screenStateFilter = new IntentFilter();
         screenStateFilter.addAction(Intent.ACTION_SCREEN_ON);
         screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
@@ -60,7 +69,8 @@ public class PocketDetectionService extends Service {
     public void onDestroy() {
         if (DEBUG) Log.i(TAG, "Destroying service");
         unregisterReceiver(mScreenStateReceiver);
-        mSensorManager.unregisterListener(mSensorListener, mTouchSensor);
+        mSensorManager.unregisterListener(mSensorListener);
+        // Call the superclass method at the end
         super.onDestroy();
     }
 
@@ -69,49 +79,70 @@ public class PocketDetectionService extends Service {
         return null;
     }
 
-    private BroadcastReceiver mScreenStateReceiver = new BroadcastReceiver() {
+    private final BroadcastReceiver mScreenStateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            switch (intent.getAction()) {
-                case Intent.ACTION_SCREEN_ON:
-                    if (DEBUG) Log.i(TAG, "Received ACTION_SCREEN_ON mUserPresent=" + mUserPresent);
-                    if (mUserPresent) return;
-                    mSensorManager.registerListener(mSensorListener,
-                            mTouchSensor, SensorManager.SENSOR_DELAY_NORMAL);
-                    break;
-                case Intent.ACTION_SCREEN_OFF:
-                    if (DEBUG) Log.i(TAG, "Received ACTION_SCREEN_OFF");
-                    mSensorManager.unregisterListener(mSensorListener, mTouchSensor);
-                    mUserPresent = false;
-                    break;
-                case Intent.ACTION_USER_PRESENT:
-                    if (DEBUG) Log.i(TAG, "Received ACTION_USER_PRESENT");
-                    // disable when unlocked
-                    mSensorManager.unregisterListener(mSensorListener, mTouchSensor);
-                    mUserPresent = true;
-                    break;
+            if (intent != null) {
+                handleIntentAction(intent.getAction());
             }
         }
     };
 
-    private SensorEventListener mSensorListener = new SensorEventListener() {
+    private void handleIntentAction(String action) {
+        if (Intent.ACTION_SCREEN_ON.equals(action)) {
+            handleScreenOn();
+        } else if (Intent.ACTION_SCREEN_OFF.equals(action)) {
+            handleScreenOff();
+        } else if (Intent.ACTION_USER_PRESENT.equals(action)) {
+            handleUserPresent();
+        }
+    }
+
+    private void handleScreenOn() {
+        if (DEBUG) Log.i(TAG, "Received ACTION_SCREEN_ON mUserPresent=" + mUserPresent);
+        if (!mUserPresent) {
+            mSensorManager.registerListener(mSensorListener, mTouchSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        }
+    }
+
+    private void handleScreenOff() {
+        if (DEBUG) Log.i(TAG, "Received ACTION_SCREEN_OFF");
+        // Disable it when unlocked
+        mSensorManager.unregisterListener(mSensorListener);
+        mUserPresent = false;
+    }
+
+    private void handleUserPresent() {
+        if (DEBUG) Log.i(TAG, "Received ACTION_USER_PRESENT");
+        mSensorManager.unregisterListener(mSensorListener);
+        mUserPresent = true;
+    }
+
+    private final SensorEventListener mSensorListener = new SensorEventListener() {
         @Override
         public void onAccuracyChanged(Sensor sensor, int accuracy) { }
 
         @Override
         public void onSensorChanged(SensorEvent event) {
-            boolean isTouchDetected = event.values[0] == 1;
-            boolean isOnKeyguard = mKeyguardManager.isKeyguardLocked();
-
-            if (DEBUG)
-                Log.i(TAG, "onSensorChanged type=" + event.sensor.getType()
-                        + " value=" + event.values[0] + " isTouchDetected="
-                        + isTouchDetected + " isOnKeyguard=" + isOnKeyguard);
-
-            if (isTouchDetected && isOnKeyguard) {
-                Log.i(TAG, "In pocket, going to sleep");
-                mPowerManager.goToSleep(SystemClock.uptimeMillis());
+            if (event.sensor.getType() == TYPE_LARGE_AREA_TOUCH_SENSOR) {
+                processSensorEvent(event);
             }
         }
     };
+
+    private void processSensorEvent(SensorEvent event) {
+        boolean isTouchDetected = event.values[0] == 1;
+        boolean isOnKeyguard = mKeyguardManager.isKeyguardLocked();
+
+        if (DEBUG) {
+            Log.i(TAG, "onSensorChanged type=" + event.sensor.getType()
+                    + " value=" + event.values[0] + " isTouchDetected="
+                    + isTouchDetected + " isOnKeyguard=" + isOnKeyguard);
+        }
+
+        if (isTouchDetected && isOnKeyguard) {
+            Log.i(TAG, "In pocket, going to sleep");
+            mPowerManager.goToSleep(SystemClock.uptimeMillis());
+        }
+    }
 }
