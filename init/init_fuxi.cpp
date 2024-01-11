@@ -58,9 +58,4 @@ void vendor_load_properties() {
     } else { // Global
         set_ro_build_prop("model", "2211133G");
     }
-
-    // Override first api level for safetynet
-    if (!IsRecoveryMode()) {
-        property_override("ro.product.first_api_level", "32");
-    }
 }
