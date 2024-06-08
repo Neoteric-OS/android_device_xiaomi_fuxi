@@ -28,4 +28,7 @@
 
     <!-- Fingerprint from stock ROM -->
     <string name="config_stockFingerprint" translatable="false">Xiaomi/fuxi_global/missi:13/TKQ1.220905.001/V14.0.9.0.TMCMIXM:user/release-keys</string>
+
+    <!-- Whether devices suports in-display fingerprint when screen is off -->
+    <bool name="config_supportsScreenOffUdfps">true</bool>
 </resources>
