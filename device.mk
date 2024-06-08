@@ -296,7 +296,8 @@ PRODUCT_PACKAGES += \
     FuxiSystemUIAOSPA \
     FuxiWifiRes \
     FuxiWifiResTarget \
-    FuxiWifiResTarget_spf
+    FuxiWifiResTarget_spf \
+    FuxiSecureElement
 
 # Parts
 PRODUCT_PACKAGES += \
