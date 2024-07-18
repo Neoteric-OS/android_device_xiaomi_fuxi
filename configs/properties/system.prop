@@ -8,3 +8,6 @@ ro.media.recorder-max-base-layer-fps=60
 
 # NFC
 ro.nfc.port=I2C
+
+# Silence minksocket logs
+persist.log.tag.minksocket=S
