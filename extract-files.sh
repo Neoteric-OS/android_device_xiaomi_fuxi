@@ -67,6 +67,13 @@ function blob_fixup() {
         odm/lib64/libmt@1.3.so)
             "${PATCHELF}" --replace-needed "libcrypto.so" "libcrypto-v33.so" "${2}"
             ;;
+        system/priv-app/MiuiCamera/MiuiCamera.apk)
+            tmp_dir="${EXTRACT_TMP_DIR}/MiuiCamera"
+            $APKTOOL d -q "$2" -o "$tmp_dir" -f
+            grep -rl "com.miui.gallery" "$tmp_dir" | xargs sed -i 's|"com.miui.gallery"|"com.google.android.apps.photos"|g'
+            $APKTOOL b -q "$tmp_dir" -o "$2"
+            rm -rf "$tmp_dir"
+            ;;
         vendor/bin/hw/android.hardware.security.keymint-service-qti | vendor/lib64/libqtikeymint.so)
             "${PATCHELF}" --add-needed android.hardware.security.rkp-V3-ndk.so "${2}"
             ;;
