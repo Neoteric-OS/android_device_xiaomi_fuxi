@@ -1964,11 +1964,6 @@ vendor/lib64/libdeccfg.so
 vendor/lib64/libdolbyottcameracontrol.so
 vendor/lib64/libeglcore.so
 
-# Memtrack
-vendor/bin/hw/vendor.qti.hardware.memtrack-service
-vendor/etc/init/memtrack_qti.rc
-vendor/etc/vintf/manifest/memtrack_qti.xml
-
 # MiCharge
 vendor/bin/hw/vendor.xiaomi.hardware.micharge@1.0-service
 vendor/etc/init/vendor.xiaomi.hardware.micharge@1.0-service.rc
