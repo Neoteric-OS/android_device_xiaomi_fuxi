@@ -79,6 +79,11 @@ function blob_fixup() {
         vendor/etc/qcril_database/upgrade/config/6.0_config.sql)
             sed -i '/persist.vendor.radio.redir_party_num/ s/true/false/g' "${2}"
             ;;
+        vendor/etc/seccomp_policy/atfwd@2.0.policy)
+            [ "$2" = "" ] && return 0
+            [ -n "$(tail -c 1 "${2}")" ] && echo >> "${2}"
+            grep -q "gettid: 1" "${2}" || echo "gettid: 1" >> "${2}"
+            ;;
         vendor/etc/seccomp_policy/qwesd@2.0.policy)
             echo "pipe2: 1" >> "${2}"
             ;;
