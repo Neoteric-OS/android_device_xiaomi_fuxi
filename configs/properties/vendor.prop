@@ -36,6 +36,11 @@ persist.vendor.dpm.vndr.idletimer.mode=default
 # DRM
 drm.service.enabled=true
 
+# Fingerprint
+persist.vendor.fingerprint.type=udfps_optical
+persist.vendor.fingerprint.sensor_location=540|2150|105
+persist.vendor.fingerprint.sensor_modules=goodix_fod
+
 # FM
 vendor.hw.fm.init=0
 
