@@ -260,7 +260,9 @@ PRODUCT_PACKAGES += \
     libcodec2_vndk.vendor \
     libgui_vendor \
     libsfplugin_ccodec_utils.vendor \
-    libstagefrighthw
+    libstagefrighthw \
+    libstagefright_softomx_plugin.vendor \
+    libstagefright_softomx.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
