@@ -5,6 +5,7 @@
 #
 
 DEVICE_PATH := device/xiaomi/fuxi
+KERNEL_PREBUILT_DIR := device/xiaomi/fuxi-kernel
 
 # A/B
 AB_OTA_UPDATER := true
@@ -79,6 +80,8 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_fuxi
 TARGET_RECOVERY_DEVICE_MODULES := libinit_fuxi
 
 # Kernel
+BOARD_KERNEL_PAGESIZE := 4096
+
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
@@ -87,11 +90,14 @@ BOARD_BOOTCONFIG := \
 BOARD_KERNEL_CMDLINE := \
     kasan=off \
     disable_dma32=on \
+    bootinfo.fingerprint=$(AOSPA_VERSION) \
     mtdoops.fingerprint=$(AOSPA_VERSION)
 
-BOARD_KERNEL_PAGESIZE := 4096
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
-TARGET_HAS_GENERIC_KERNEL_HEADERS := true
+BOARD_KERNEL_IMAGE_NAME := Image
+
+include $(DEVICE_PATH)/kernel/kernel-platform.mk
+
 # Lineage Health
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
 
