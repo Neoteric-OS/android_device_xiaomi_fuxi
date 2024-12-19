@@ -11,6 +11,7 @@ persist.vendor.qcom.bluetooth.aptxadaptiver2_1_support=true
 # Camera
 camera.disable_zsl_mode=true
 ro.camera.enableCamera1MaxZsl=1
+ro.hardware.camera=xiaomi
 
 # Display
 persist.sys.sf.native_mode=258

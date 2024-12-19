@@ -1,0 +1,3 @@
+# Camera
+ro.com.google.lens.oem_camera_package=com.android.camera
+ro.hardware.camera=xiaomi
