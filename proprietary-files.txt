@@ -1854,7 +1854,6 @@ vendor/etc/init/ipa_fws.rc
 odm/lib64/hw/consumerir.qcom.so
 vendor/bin/hw/android.hardware.ir-service.example
 vendor/etc/init/android.hardware.ir-service.example.rc
-vendor/etc/vintf/manifest/android.hardware.ir-service.example.xml
 
 # Keymaster
 vendor/bin/hw/android.hardware.security.keymint-service-qti
