@@ -828,6 +828,7 @@ odm/etc/vintf/manifest/vendor.qti.camera.postproc-impl.xml
 odm/etc/vintf/manifest/vendor.qti.camera.provider.xml
 odm/etc/cit_camera_resolution.json
 odm/etc/cit_param_config.json
+odm/lib64/camera/aon_front.pb;SYMLINK=vendor/lib64/camera/aon_front.pb
 odm/lib64/camera/components/com.bots.node.vendortagwrite.so
 odm/lib64/camera/components/com.mi.node.aiasd.so
 odm/lib64/camera/components/com.mi.node.dlengine.so
@@ -937,7 +938,6 @@ odm/lib64/camera/plugins/com.xiaomi.plugin.portraitrepair.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.sr.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.supermoon.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.tsskinbeautifier.so
-odm/lib64/camera/aon_front.pb;SYMLINK=vendor/lib64/camera/aon_front.pb
 odm/lib64/camera/com.qti.actuator.fuxi_semco_imx800_ak7314_wide_actuator.so
 odm/lib64/camera/com.qti.actuator.fuxi_semco_s5k3k1_ak7314_tele_actuator.so
 odm/lib64/camera/com.qti.actuator.fuxi_semco_s5k3k1_ak7314_tele_actuator_ii.so
@@ -1523,6 +1523,7 @@ odm/etc/disp0/mdss_dsi_m3_38_0c_0a_dsc_cmd/mi_gc_0.txt
 odm/etc/disp0/mdss_dsi_m3_38_0c_0a_dsc_cmd/mi_gc_1.txt
 odm/etc/disp0/mdss_dsi_m3_38_0c_0a_dsc_cmd/mi_gc_2.txt
 odm/etc/disp0/mdss_dsi_m3_38_0c_0a_dsc_cmd/mi_gc_3.txt
+odm/etc/init/init.boled.lightsensor.rc
 odm/etc/df_default.xml
 odm/lib64/hw/displayfeature.default.so
 odm/lib64/libMiDispDevManager.so
@@ -1568,6 +1569,7 @@ vendor/lib64/libhdrvivid.so
 # Display (HWC)
 vendor/bin/hw/vendor.qti.hardware.display.composer-service
 vendor/bin/qdcmss
+vendor/bin/ubwcconvert
 vendor/etc/init/qdcmss.rc
 vendor/etc/snapdragon_color_libs_config.xml
 vendor/lib64/libbacklight-calib.so
@@ -1623,7 +1625,9 @@ vendor/lib64/libclstc_tm.so
 vendor/lib64/libdisplaydebug.so
 vendor/lib64/libdisplayqos.so
 vendor/lib64/libdisplayskuutils.so
+vendor/lib64/libgralloc.qti.so
 vendor/lib64/libintervmipc.so
+vendor/lib64/libqdMetaData.so
 vendor/lib64/libqseed3.so
 vendor/lib64/librcmask.so
 vendor/lib64/libsdedrm.so
@@ -1806,12 +1810,12 @@ vendor/lib64/vendor.qti.gnss-V4-ndk.so
 vendor/lib64/vendor.qti.gnss-service.so
 
 # Graphics
-vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so;SYMLINK=vendor/lib/libEGL_adreno.so
-vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib/libGLESv2_adreno.so
-vendor/lib/egl/libVkLayer_ADRENO_qprofiler.so
 vendor/lib/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib/libq3dtools_adreno.so
+vendor/lib/egl/eglSubDriverAndroid.so
+vendor/lib/egl/libGLESv1_CM_adreno.so
+vendor/lib/egl/libVkLayer_ADRENO_qprofiler.so
 vendor/lib/egl/libq3dtools_esx.so
 vendor/lib/hw/vulkan.adreno.so
 vendor/lib/libCB.so
@@ -1851,6 +1855,7 @@ vendor/lib64/libqtiidentitycredential.so
 vendor/etc/init/ipa_fws.rc
 
 # IR
+#vendor/etc/vintf/manifest/android.hardware.ir-service.example.xml
 odm/lib64/hw/consumerir.qcom.so
 vendor/bin/hw/android.hardware.ir-service.example
 vendor/etc/init/android.hardware.ir-service.example.rc
@@ -1983,7 +1988,6 @@ vendor/lib64/hw/vendor.xiaomi.hardware.micharge@1.0-impl.so
 vendor/lib64/vendor.xiaomi.hardware.micharge@1.0.so
 
 # Mlipay
-product/app/IFAAService/IFAAService.apk:system_ext/app/IFAAService/IFAAService.apk
 odm/bin/fidoca
 odm/bin/mlipayd@1.1
 odm/bin/mtd@1.3
@@ -2013,6 +2017,7 @@ odm/lib64/vendor.xiaomi.hardware.mtdservice@1.3.so
 odm/lib64/vendor.xiaomi.hardware.tidaservice@1.0.so
 odm/lib64/vendor.xiaomi.hardware.tidaservice@1.1.so
 odm/lib64/vendor.xiaomi.hardware.tidaservice@1.2.so
+product/app/IFAAService/IFAAService.apk:system_ext/app/IFAAService/IFAAService.apk
 
 # MMI
 vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
