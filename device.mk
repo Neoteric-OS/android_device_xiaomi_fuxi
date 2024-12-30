@@ -378,7 +378,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0 \
     android.hardware.thermal@2.0.vendor \
-    android.hardware.thermal@2.0-service.qti-v2
+    android.hardware.thermal-service.qti
 
 # Touchscreen
 PRODUCT_COPY_FILES += \
