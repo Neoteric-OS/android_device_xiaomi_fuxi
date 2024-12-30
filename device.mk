@@ -347,7 +347,7 @@ PRODUCT_PACKAGES += \
 
 # Powershare
 PRODUCT_PACKAGES += \
-    vendor.aospa.powershare-service
+    vendor.lineage.powershare-service
 
 # QMI
 PRODUCT_PACKAGES += \
