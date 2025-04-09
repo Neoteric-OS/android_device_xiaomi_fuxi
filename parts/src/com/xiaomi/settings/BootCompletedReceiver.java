@@ -19,7 +19,6 @@ import android.view.Display.HdrCapabilities;
 import com.xiaomi.settings.display.ColorModeService;
 import com.xiaomi.settings.display.DcDimmingService;
 import com.xiaomi.settings.doze.AodBrightnessService;
-import com.xiaomi.settings.doze.PocketDetectionService;
 import com.xiaomi.settings.touch.AlwaysOnFingerprintService;
 import com.xiaomi.settings.touch.TouchOrientationService;
 import com.xiaomi.settings.touch.TouchPollingRateService;
@@ -53,10 +52,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         context.startServiceAsUser(new Intent(context, DcDimmingService.class),
                 UserHandle.CURRENT);
 
-        // Pocket
-        context.startServiceAsUser(new Intent(context, PocketDetectionService.class),
-                UserHandle.CURRENT);
-
         // Touchscreen
         context.startServiceAsUser(new Intent(context, AlwaysOnFingerprintService.class),
                 UserHandle.CURRENT);
@@ -64,7 +59,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
                 UserHandle.CURRENT);
         context.startServiceAsUser(new Intent(context, TouchPollingRateService.class),
                 UserHandle.CURRENT);
-        
+
         // Override HDR types to enable Dolby Vision
         final DisplayManager displayManager = context.getSystemService(DisplayManager.class);
         displayManager.overrideHdrTypes(Display.DEFAULT_DISPLAY, new int[]{
