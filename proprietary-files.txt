@@ -184,13 +184,13 @@ vendor/lib64/libagmmixer.so
 vendor/lib64/vendor.qti.hardware.AGMIPC@1.0.so
 
 # Audio
-odm/etc/audio/silent-3sec.wav
 odm/lib64/libaudioroute_ext.so
 odm/lib64/libcrussp.so
 vendor/etc/models/acd/event.eai
 vendor/etc/models/acd/music.eai
 vendor/etc/models/acd/speech.eai
 vendor/etc/audio_cloud_control_white_list.xml
+vendor/etc/misound_asc_model.tflite
 vendor/lib64/hw/audio.primary.kalama.so
 vendor/lib64/lib_misound_asc.so
 vendor/lib64/libadm.so
