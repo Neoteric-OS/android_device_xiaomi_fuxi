@@ -55,6 +55,9 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+        odm/bin/hw/vendor.nxp.hardware.nfc@2.0-service)
+            "${PATCHELF}" --add-needed "libbase_shim.so" "$2"
+	    ;;
         odm/etc/camera/enhance_motiontuning.xml | odm/etc/camera/night_motiontuning.xml | odm/etc/camera/motiontuning.xml)
             sed -i 's/<?xml=/<?xml /g' "${2}"
             ;;
