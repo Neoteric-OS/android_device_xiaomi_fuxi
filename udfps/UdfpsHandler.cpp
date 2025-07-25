@@ -106,17 +106,17 @@ class XiaomiSM8550UdfpsHandler : public UdfpsHandler {
     }
 
     void onFingerDown(uint32_t /*x*/, uint32_t /*y*/, float /*minor*/, float /*major*/) {
-        LOG(INFO) << __func__;
+        LOG(DEBUG) << __func__;
         setFingerDown(true);
     }
 
     void onFingerUp() {
-        LOG(INFO) << __func__;
+        LOG(DEBUG) << __func__;
         setFingerDown(false);
     }
 
     void onAcquired(int32_t result, int32_t vendorCode) {
-        LOG(INFO) << __func__ << " result: " << result << " vendorCode: " << vendorCode;
+        LOG(DEBUG) << __func__ << " result: " << result << " vendorCode: " << vendorCode;
         if (static_cast<AcquiredInfo>(result) == AcquiredInfo::GOOD) {
             setFingerDown(false);
             setFodStatus(FOD_STATUS_OFF);
@@ -130,7 +130,7 @@ class XiaomiSM8550UdfpsHandler : public UdfpsHandler {
     }
 
     void cancel() {
-        LOG(INFO) << __func__;
+        LOG(DEBUG) << __func__;
         setFingerDown(false);
         setFodStatus(FOD_STATUS_OFF);
     }
