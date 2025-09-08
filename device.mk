@@ -378,6 +378,15 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
 
+# Shims
+PRODUCT_PACKAGES += \
+    libaudioroute-v34 \
+    libbinder_shim.vendor \
+    libbase_shim \
+    libcodec2_shim \
+    libprocessgroup_shim \
+    libui-v34
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0 \
