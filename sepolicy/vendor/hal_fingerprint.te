@@ -11,6 +11,7 @@ allow hal_fingerprint_default platform_app:fd *;
 allow hal_fingerprint_default system_app:binder { call transfer };
 allow hal_fingerprint_default system_app:binder transfer;
 allow hal_fingerprint_default system_app:fd *;
+allow hal_fingerprint_default self:capability { sys_nice };
 allow hal_fingerprint_default sysfs:file write;
 allow hal_fingerprint_default vendor_sysfs_spss:dir search;
 allow hal_fingerprint_default vendor_sysfs_spss:file { open read };
