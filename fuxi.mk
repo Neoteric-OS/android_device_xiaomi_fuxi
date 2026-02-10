@@ -18,8 +18,11 @@ PRODUCT_MODEL := Xiaomi 13
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="ishtar_global-user 14 UKQ1.230804.001 V816.0.19.0.UMCCNXM release-keys"
-
-BUILD_FINGERPRINT := Xiaomi/ishtar_global/ishtar:14/UKQ1.230804.001/V816.0.19.0.UMCCNXM:user/release-keys
+    BuildDesc="fuxi_global-user 14 UKQ1.230804.001 V816.0.19.0.UMCCNXM release-keys" \
+    BuildFingerprint=Xiaomi/fuxi_global/fuxi:14/UKQ1.230804.001/V816.0.19.0.UMCCNXM:user/release-keys \
+    DeviceName=fuxi \
+    DeviceProduct=fuxi \
+    SystemDevice=fuxi \
+    SystemName=fuxi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
