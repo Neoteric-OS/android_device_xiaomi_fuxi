@@ -100,6 +100,7 @@ debug.sf.early.sf.duration=10500000
 debug.sf.earlyGl.sf.duration=10500000
 debug.sf.late.sf.duration=10500000
 persist.sys.sf.color_saturation=1.0
+ro.surface_flinger.game_default_frame_rate_override=120
 ro.surface_flinger.has_wide_color_display=true
 ro.surface_flinger.has_HDR_display=true
 ro.surface_flinger.use_color_management=true
