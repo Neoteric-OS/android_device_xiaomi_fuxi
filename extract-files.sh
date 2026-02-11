@@ -120,25 +120,15 @@ function blob_fixup() {
         vendor/etc/qcril_database/upgrade/config/6.0_config.sql)
             sed -i '/persist.vendor.radio.redir_party_num/ s/true/false/g' "${2}"
             ;;
-        vendor/etc/seccomp_policy/atfwd@2.0.policy | vendor/etc/seccomp_policy/modemManager.policy | vendor/etc/seccomp_policy/wfdhdcphalservice.policy)
-            [ "$2" = "" ] && return 0
-            [ -n "$(tail -c 1 "${2}")" ] && echo >> "${2}"
-            grep -q "gettid: 1" "${2}" || echo "gettid: 1" >> "${2}"
-            ;;
         vendor/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy)
             [ "$2" = "" ] && return 0
             [ -n "$(tail -c 1 "${2}")" ] && echo >> "${2}"
             grep -q "setsockopt: 1" "${2}" || echo "setsockopt: 1" >> "${2}"
             ;;
         vendor/etc/seccomp_policy/qwesd@2.0.policy)
-            # Remove trailing newline
-            sed -i '$ d' "$2"
-
-            # Append "gettid: 1" and "pipe2: 1"
-            {
-                echo "gettid: 1"
-                echo "pipe2: 1"
-            } >> "$2"
+            [ "$2" = "" ] && return 0
+            [ -n "$(tail -c 1 "${2}")" ] && echo >> "${2}"
+            grep -q "pipe2: 1" "${2}" || echo "pipe2: 1" >> "${2}"
             ;;
         vendor/lib64/c2.dolby.client.so)
             "${PATCHELF}" --add-needed "libcodec2_hidl_shim.so" "${2}"
