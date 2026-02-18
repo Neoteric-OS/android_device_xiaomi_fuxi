@@ -18,8 +18,8 @@ PRODUCT_MODEL := Xiaomi 13
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="fuxi_global-user 15 AQ3A.240912.001 OS2.0.207.0.VMCEUXM release-keys" \
-    BuildFingerprint=Xiaomi/fuxi_global/fuxi:15/AQ3A.240912.001/OS2.0.207.0.VMCEUXM:user/release-keys \
+    BuildDesc="fuxi_global-user 16 BP2A.250605.031.A3 OS3.0.3.0.WMCMIXM release-keys" \
+    BuildFingerprint=Xiaomi/fuxi_global/fuxi:16/BP2A.250605.031.A3/OS3.0.3.0.WMCMIXM:user/release-keys \
     DeviceName=fuxi \
     DeviceProduct=fuxi \
     SystemDevice=fuxi \
