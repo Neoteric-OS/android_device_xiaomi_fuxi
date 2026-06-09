@@ -20,10 +20,12 @@ on boot
     chown system system /sys/class/power_supply/battery/sport_mode
     chown system system /sys/class/qcom-battery/night_charging
     chown system system /sys/class/qcom-battery/sport_mode
+    chown system system /sys/class/qcom-battery/fastchg_mode
     chmod 0660 /sys/class/power_supply/battery/input_suspend
     chmod 0660 /sys/class/power_supply/battery/sport_mode
     chmod 0660 /sys/class/qcom-battery/night_charging
     chmod 0660 /sys/class/qcom-battery/sport_mode
+    chmod 0664 /sys/class/qcom-battery/fastchg_mode
 
 # Sensors
 service citsensor-hal-2-0 /odm/bin/hw/vendor.xiaomi.sensor.citsensorservice@2.0-service
