@@ -1248,10 +1248,17 @@ odm/firmware/fuxi_s5k3k1_bu24721_ois.prog
 -product/overlay/MiuiCameraOverlayLeicaed/MiuiCameraOverlayLeicaed.apk
 -product/priv-app/MiuiCamera/MiuiCamera.apk:system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Snap,Camera2,GoogleCameraGo,Aperture
 system/etc/public.libraries-xiaomi.txt
+system/lib64/android.hardware.camera.common@1.0.so
+system/lib64/libhidltransport.so
 system_ext/lib64/libcamera_algoup_jni.xiaomi.so:system/lib64/libcamera_algoup_jni.xiaomi.so
 system_ext/lib64/libcamera_mianode_jni.xiaomi.so:system/lib64/libcamera_mianode_jni.xiaomi.so
 system_ext/lib64/libmicampostproc_client.so:system/lib64/libmicampostproc_client.so
+system_ext/lib64/libopencl-camera.so:system/lib64/libOpenCL.so;FIX_SONAME
+system_ext/lib64/libopencl-camera.so:system/lib64/libopencl-camera.so
 system_ext/lib64/vendor.xiaomi.hardware.campostproc@1.0.so:system/lib64/vendor.xiaomi.hardware.campostproc@1.0.so
+vendor/lib64/libcdsprpc.so:system/lib64/libcdsprpc.so
+vendor/lib64/libvmmem.so:system/lib64/libvmmem.so
+vendor/lib64/vendor.qti.hardware.dsp@1.0.so:system/lib64/vendor.qti.hardware.dsp@1.0.so
 
 # CDSP
 vendor/bin/cdsprpcd

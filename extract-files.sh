@@ -118,6 +118,9 @@ function blob_fixup() {
             "${PATCHELF}" --add-needed "libhidlbase_shim.so" "${2}"
             "${PATCHELF}" --add-needed "libbinder_shim.so" "${2}"
             ;;
+        system/priv-app/MiuiCamera/MiuiCamera.apk)
+            apktool_patch "${2}" "${MY_DIR}/patches/MiuiCamera" -r
+            ;;
     esac
 }
 
