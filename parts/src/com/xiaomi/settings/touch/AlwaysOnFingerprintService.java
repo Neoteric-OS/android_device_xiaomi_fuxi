@@ -13,6 +13,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.ContentObserver;
+import android.hardware.display.DisplayManager;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.IBinder;
@@ -83,7 +84,14 @@ public class AlwaysOnFingerprintService extends Service {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (DEBUG) Log.d(TAG, "onReceive: " + intent.getAction());
-            int displayState = getDisplay().getState();
+            // Obtain the default display through DisplayManager instead.
+            final Display display = getSystemService(DisplayManager.class)
+                    .getDisplay(Display.DEFAULT_DISPLAY);
+            if (display == null) {
+                Log.w(TAG, "onReceive: no default display yet");
+                return;
+            }
+            final int displayState = display.getState();
             boolean displayStateAof = displayState != Display.STATE_ON && mIsAofEnabled;
             boolean displayStateDoze = displayState == Display.STATE_DOZE || displayState == Display.STATE_DOZE_SUSPEND;
             if (FileUtils.readLineInt(FOD_PRESS_STATUS_PATH) == 1) {
