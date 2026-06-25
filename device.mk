@@ -397,6 +397,13 @@ PRODUCT_PACKAGES += \
     libprocessgroup_shim \
     libui-v34
 
+# Telephony
+PRODUCT_PACKAGES += \
+    xiaomi-telephony-stub
+
+PRODUCT_BOOT_JARS += \
+    xiaomi-telephony-stub
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0 \
